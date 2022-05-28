@@ -22,6 +22,7 @@ module.exports = {
       },
       borderColor: {
         color: 'rgba(0, 0, 0, 0.1)',
+        mycolor: 'rgba(5,5,5,0.8)',
       },
       width: {
         400: '400px',
@@ -40,7 +41,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern':
-                    "url('https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/welcome-bg-2x-svg.25338f53.svg')",
+          "url('https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/welcome-bg-2x-svg.25338f53.svg')",
       },
     },
   },
