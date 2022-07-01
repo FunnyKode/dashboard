@@ -45,7 +45,7 @@ function App() {
                 <Route path="/customers" element={<Customers />} />
                 {/* Apps */}
                 <Route path="/kanban" element={<Kanban />} />
-                <Route path="/editors" element={<Editor />} />
+                <Route path="/editor" element={<Editor />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/kanban" element={<Kanban />} />
                 {/* Charts */}

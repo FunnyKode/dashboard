@@ -8,9 +8,9 @@ import { useStateContext } from '../context/ContextProvider';
 
 const Sidebar = () => {
   const { activeMenu, setActiveMenu, screenSize } = useStateContext();
-  
+
   const handleCloseSideBar = () => {
-    if(activeMenu && screenSize <= 900){
+    if (activeMenu && screenSize <= 900) {
       setActiveMenu(false);
     }
   };
