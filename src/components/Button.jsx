@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Button({ color, borderRadius, bgColor, text, size }) {
+export function Button({ color, borderRadius, bgColor, text, size }) {
   return (
     <button
       type="button"
@@ -11,5 +11,3 @@ function Button({ color, borderRadius, bgColor, text, size }) {
     </button>
   );
 }
-
-export default Button;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BsChatLeft } from 'react-icons/bs';
@@ -6,7 +6,10 @@ import { RiNotification3Line } from 'react-icons/ri';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import avatar from '../data/avatar.jpg';
-import { Cart, Chat, Notification, UserProfile } from '.';
+import { Cart } from './Cart';
+import { Chat } from './Chat';
+import { Notification } from './Notification';
+import { UserProfile } from './UserProfile';
 import { useStateContext } from '../context/ContextProvider';
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
@@ -27,7 +30,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, screenSize, setScreenSize, handleClick } = useStateContext();
+  const { setActiveMenu, activeMenu, isClicked, screenSize, setScreenSize, handleClick, currentColor } = useStateContext();
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,34 +48,35 @@ const Navbar = () => {
       setActiveMenu(true);
     }
   }, [screenSize]);
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
   return (
-    <div className="flex justify-between p-2 md:mx-6 relative">
+    <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
       <NavButton
         title="Menu"
-        customFunc={() => setActiveMenu((prev) => !prev)}
-        color="blue"
+        customFunc={handleActiveMenu}
+        color={currentColor}
         icon={<AiOutlineMenu />}
       />
       <div className="flex ">
         <NavButton
           title="Cart"
           customFunc={() => handleClick('cart')}
-          color="blue"
+          color={currentColor}
           icon={<FiShoppingCart />}
         />
         <NavButton
           title="Chat"
           dotColor="#03C9D7"
           customFunc={() => handleClick('chat')}
-          color="blue"
+          color={currentColor}
           icon={<BsChatLeft />}
         />
         <NavButton
           title="Notification"
           dotColor="#03C9D7"
           customFunc={() => handleClick('notification')}
-          color="blue"
+          color={currentColor}
           icon={<RiNotification3Line />}
         />
         <TooltipComponent content="Profile" position="BottomCenter">
