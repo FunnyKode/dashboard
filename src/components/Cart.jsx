@@ -2,9 +2,9 @@ import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
-import { useStateContext } from '../context/ContextProvider';
+import { useStateContext } from '../context/context-provider';
 import { cartData } from '../data/dummy';
-import { Button } from './Button';
+import { Button } from './button';
 
 export const Cart = () => {
   const { currentColor } = useStateContext();
